@@ -1,0 +1,28 @@
+import jugador.*
+import jugadoresPersonajes.*
+import elementos.*
+import armas.*
+
+
+test "Pasan muchas cosas" {
+	//Floki tiene como arma la jabalina
+	//Luisa tiene como personaje activo a Mario
+	//Luisa aparece Tipa
+	//Luisa cambia por Floki
+	//Luisa aparece aurora
+	//Luisa aparece castillo
+	
+	floki.arma(jabalina)
+	luisa.personajeActivo(mario)
+	luisa.aparece(tipa)
+	luisa.personajeActivo(floki)
+	luisa.aparece(aurora)
+	luisa.aparece(castillo)
+
+	assert.equals(16, mario.valorRecolectado())
+	assert.equals(9, tipa.altura())
+	assert.notThat(mario.esFeliz())
+	assert.notThat(aurora.estaViva())
+	assert.equals(150, castillo.nivelDeDefensa())
+	assert.notThat(jabalina.estaCargada())
+}
